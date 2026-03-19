@@ -1,0 +1,136 @@
+
+        /* Custom CSS */
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            background-color: #e4e4e4; /* Fundo mais escuro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegação */
+        .navbar {
+            background-color: #fff; /* Fundo branco */
+        }
+
+        .navbar a {
+            color: #000 !important; /* Cor preta nas letras */
+            font-weight: normal; /* Remover o negrito */
+            margin-right: 40px;
+            padding: 30px 20px;
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        .navbar a:hover {
+            color: #d32f2f !important; /* Cor vermelha no hover */
+        }
+
+        .navbar .navbar-nav {
+            margin-left: auto; /* Alinha os itens à direita */
+        }
+
+        .navbar .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-item:last-child a {
+            border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+            border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+            margin-top: 28px;
+            padding: 0px 30px;
+        }
+
+        /* Logo da Pizzaria */
+        .navbar .navbar-brand {
+            padding: 0;
+            margin-right: 20px;
+        }
+
+        .navbar .navbar-brand img {
+            width: 90px; /* Ajuste a largura da logo */
+            margin-left: 40px;
+            height: auto;
+        }
+
+        /* Título do formulário */
+        .form-title {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3rem; /* Tamanho maior do título */
+            font-weight: bold;
+            color: #000;
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        /* Formulário */
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc; /* Aumentando a borda para destacar mais */
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background-color: #fafafa; /* Fundo mais claro para os campos */
+        }
+
+        .form-container input:focus {
+            border-color: #d32f2f; /* Cor da borda quando o campo está em foco */
+            background-color: #fff; /* Fundo branco quando em foco */
+            box-shadow: 0 0 8px rgba(211, 47, 47, 0.5); /* Efeito de sombra ao focar no campo */
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05); /* Efeito de aumento no botão */
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #130806; /* Tom de marrom bem forte */
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 80px; /* Espaçamento para o rodapé mais para baixo */
+        }
+
+        .footer a {
+            color: #ffccbc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Alterações de fontes */
+        .form-title {
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        .navbar a, .form-container input, .footer {
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+  

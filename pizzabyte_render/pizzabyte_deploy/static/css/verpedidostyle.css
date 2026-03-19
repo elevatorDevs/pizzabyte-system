@@ -1,0 +1,136 @@
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: #e4e4e4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #fff; /* Fundo branco */
+}
+
+.navbar a {
+    color: #000 !important; /* Cor preta nas letras */
+    font-weight: normal; /* Remover o negrito */
+    margin-right: 40px;
+    padding: 30px 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.navbar a:hover {
+    color: #d32f2f !important; /* Cor vermelha no hover */
+}
+
+.navbar .navbar-nav {
+    margin-left: auto; /* Alinha os itens à direita */
+}
+
+.navbar .nav-item {
+    margin-left: 20px;
+}
+
+.navbar .nav-item:last-child a {
+    border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+    border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+    margin-top: 28px;
+    padding: 0px 30px;
+}
+
+/* Logo da Pizzaria */
+.navbar .navbar-brand {
+    padding: 0;
+    margin-right: 20px;
+}
+
+.navbar .navbar-brand img {
+    width: 90px; /* Ajuste a largura da logo */
+    margin-left: 40px;
+    height: auto;
+}
+
+/* Cardápio de pedidos */
+.orders-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.page-title {
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.order-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.order-number {
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.order-client {
+    margin-bottom: 15px;
+}
+
+.order-status {
+    margin-bottom: 15px;
+}
+
+.status-item {
+    margin-bottom: 5px;
+}
+
+.order-pizza {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.btn-update {
+    background-color: #d32f2f;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn-update:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+.btn-update:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(211, 47, 47, 0.7);
+}
+
+/* Rodapé */
+.footer {
+    background-color: #130806;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.footer a {
+    color: #ffccbc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}

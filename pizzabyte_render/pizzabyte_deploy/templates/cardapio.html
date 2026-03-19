@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o Sabor - PizzaByte</title>
+
+    <!-- Incluindo o Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Fonte personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/cardapiostyle.css">
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <!-- Logo da pizzaria -->
+            <a class="navbar-brand" href="#banner">
+                <img src="{{ url_for('static', filename='img/logoo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cardapio') }}">Cardápio</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('carrinho') }}">Carrinho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('meus_pedidos') }}">Meus Pedidos</a></li>  
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Entrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cadastro') }}">Criar Conta</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título da Página -->
+    <div class="page-title">
+        <h2>Escolha seu Sabor de Pizza</h2>
+        <div class="mb-3">
+            <a href="{{ url_for('ordenar_pizzas', criterio='preco') }}" class="btn btn-primary">Ordenar por Preço</a>
+            <a href="{{ url_for('ordenar_pizzas', criterio='nome') }}" class="btn btn-secondary">Ordenar por Nome</a>
+        </div>        
+    </div>
+
+    <!-- Seção de Escolha de Sabores -->
+    <div class="flavor-container">
+        {% for pizza in pizzas %}
+        <div class="flavor-card">
+            <img src="{{ url_for('static', filename=pizza['imagem']) }}" alt="Pizza de {{ pizza['nome'] }}">
+            <h5>{{ pizza['nome'] }}</h5>
+            <p>{{ pizza['descricao'] }}</p>
+            <p class="price">R$ {{ "%.2f"|format(pizza['preco']) }}</p>
+            <form action="{{ url_for('adicionar_carrinho', pizza_id=pizza['id']) }}" method="post">
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Incluindo o Bootstrap JS (com dependências corretas) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

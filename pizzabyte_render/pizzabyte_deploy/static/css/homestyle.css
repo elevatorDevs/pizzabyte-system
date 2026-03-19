@@ -1,0 +1,172 @@
+
+/* Custom CSS */
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: #e4e4e4; /* Tom de branco mais escuro para o fundo da página */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #fff; /* Fundo branco */
+}
+
+.navbar a {
+    color: #000 !important; /* Cor preta nas letras */
+    font-weight: normal; /* Remover o negrito */
+    margin-right: 40px;
+    padding: 30px 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.navbar a:hover {
+    color: #d32f2f !important; /* Cor vermelha no hover */
+}
+
+.navbar .navbar-nav {
+    margin-left: auto; /* Alinha os itens à direita */
+}
+
+.navbar .nav-item {
+    margin-left: 20px;
+}
+
+.navbar .nav-item:last-child a {
+    border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+    border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+    margin-top: 28px;
+    padding: 0px 30px;
+}
+
+/* Logo da Pizzaria */
+.navbar .navbar-brand {
+    padding: 0;
+    margin-right: 20px;
+}
+
+.navbar .navbar-brand img {
+    width: 90px; /* Ajuste a largura da logo */
+    margin-left: 40px;
+    height: auto;
+}
+
+/* Banner de boas-vindas */
+.banner {
+    background-image: url("../img/photo-1611915365928-565c527a0590.png");
+    background-size: cover;
+    background-position: 0px -150px;
+    height: 300px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Quadrado chamativo no centro do banner */
+.banner .content-box {
+    background-color: rgb(255, 255, 255); /* Fundo branco com opacidade */
+    padding: 30px 40px;
+    border-radius: 40px; /* Borda mais arredondada */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar mais destaque */
+    width: 30%; /* Tamanho do quadrado */
+    max-width: 600px;
+    margin-bottom: 0px; /* Espaçamento para o fundo */
+    margin-top: 300px;
+    
+}
+
+.banner .content-box h2 {
+    font-size: 35px; /* Tamanho do título menor */
+    color: #000; /* Cor preta no texto */
+    margin-bottom: 10px;
+}
+
+.banner .content-box .btn {
+    background-color: #ffba3b; /* Fundo amarelo */
+    color: #000;
+    border-radius: 25px;
+    padding: 2px 90px;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra suave no botão */
+}
+
+.banner .content-box .btn:hover {
+    background-color: #fbc02d;
+}
+
+/* Nova seção - Como faço meu pedido? */
+.container-info {
+    margin-top: 130px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.container-info h2 {
+    font-size: 3rem; /* Aumentando a fonte do título */
+    color: #000; /* Cor preta */
+    font-weight: bold; /* Em negrito */
+    margin-bottom: 30px;
+    font-family: 'Montserrat', 'sans-serif';
+    text-align: center; /* Centralizar o título */
+}
+
+/* Seção dividida em 3 partes */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Responsividade */
+}
+
+.row .col-md-4 {
+    width: 32%; /* Cada coluna ocupa 1/3 da largura */
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo dentro de cada coluna */
+}
+
+.row h3 {
+    font-size: 1.6rem; /* Aumentando o tamanho dos subtítulos */
+    color: #000;
+    font-weight: 500; /* Títulos em negrito */
+    margin-bottom: 15px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.row p {
+    font-size: 1.1rem; /* Aumentando o tamanho do texto */
+    color: #555;
+    line-height: 1.0;
+    text-align: justify; /* Justificando o texto */
+    margin-bottom: 20px; /* Espaço entre os parágrafos */
+    width: 90%; /* Aumentando a largura do texto para preencher mais a página */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row p strong {
+    font-weight: bold; /* Negrito apenas para a primeira palavra */
+}
+
+/* Rodapé */
+.footer {
+    background-color: #130806; /* Tom de marrom bem forte */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px; /* Espaçamento para o rodapé mais para baixo */
+}
+
+.footer a {
+    color: #ffccbc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}

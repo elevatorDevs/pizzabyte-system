@@ -1,0 +1,6 @@
+pizzabyte.db
+__pycache__/
+*.pyc
+.env
+*.rar
+*.zip

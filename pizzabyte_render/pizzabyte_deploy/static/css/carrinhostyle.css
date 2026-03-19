@@ -1,0 +1,293 @@
+/* Custom CSS */
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: #e4e4e4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* Importante para o rodapé */
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #fff;
+}
+
+.navbar a {
+    color: #000 !important;
+    font-weight: normal;
+    margin-right: 40px;
+    padding: 30px 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.navbar a:hover {
+    color: #d32f2f !important;
+}
+
+.navbar .navbar-nav {
+    margin-left: auto;
+}
+
+.navbar .nav-item {
+    margin-left: 20px;
+}
+
+.navbar .nav-item:last-child a {
+    border: 2px solid #d32f2f;
+    border-radius: 30px;
+    margin-top: 28px;
+    padding: 0px 30px;
+}
+
+/* Logo da Pizzaria */
+.navbar .navbar-brand {
+    padding: 0;
+    margin-right: 20px;
+}
+
+.navbar .navbar-brand img {
+    width: 90px;
+    margin-left: 40px;
+    height: auto;
+}
+
+/* Título da página */
+.page-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.page-title span {
+    font-weight: bold;
+}
+
+/* Container principal - CORREÇÃO PRINCIPAL */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1; /* Adicionado para empurrar o rodapé para baixo */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+/* Tabela de itens do carrinho */
+.cart-table {
+    width: calc(100% - 350px); /* Deixa espaço fixo para o resumo */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px; /* Aumentado para espaçamento do rodapé */
+}
+
+.cart-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+    padding: 35px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.cart-table tr:last-child td {
+    border-bottom: none;
+}
+
+.cart-table .product-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-table .product-info img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.cart-table .product-details h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cart-table .product-details p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.cart-table .quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.cart-table .quantity-control button {
+    width: 30px;
+    height: 30px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-table .quantity-control input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.cart-table .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #d32f2f;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.cart-table .remove-btn i {
+    margin-right: 5px;
+}
+
+.cart-table .price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Resumo do carrinho */
+.cart-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start; /* Mantém alinhado ao topo */
+}
+
+.cart-summary h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-summary .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-summary .summary-item p {
+    font-size: 1rem;
+}
+
+.cart-summary .summary-item span {
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-summary button {
+    padding: 12px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-summary button:hover {
+    background-color: #b71c1c;
+}
+
+/* Rodapé - CORREÇÃO PRINCIPAL */
+.footer {
+    background-color: #130806;
+    position: absolute; /* Alterado para absolute */
+    bottom: 0; /* Fixa no final */
+    left: 0;
+    margin-left: calc(-50vw + 50%); /* Centraliza o rodapé */
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100vw;
+    margin-top: auto; /* Garante que fique no final */
+    flex-shrink: 0; /* Evita que o rodapé reduza */
+}
+
+.footer a {
+    color: #ffccbc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .cart-table {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .cart-summary {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-table th {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .navbar a {
+        padding: 15px 10px;
+        margin-right: 15px;
+    }
+}

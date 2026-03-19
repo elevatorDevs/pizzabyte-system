@@ -1,0 +1,133 @@
+  /* Custom CSS */
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            background-color: #e4e4e4; /* Fundo mais claro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegação */
+        .navbar {
+            background-color: #fff; /* Fundo branco */
+        }
+
+        .navbar a {
+            color: #000 !important; /* Cor preta nas letras */
+            font-weight: normal; /* Remover o negrito */
+            margin-right: 40px;
+            padding: 30px 20px;
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        .navbar a:hover {
+            color: #d32f2f !important; /* Cor vermelha no hover */
+        }
+
+        .navbar .navbar-nav {
+            margin-left: auto; /* Alinha os itens à direita */
+        }
+
+        .navbar .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-item:last-child a {
+            border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+            border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+            margin-top: 28px;
+            padding: 0px 30px;
+        }
+
+        /* Logo da Pizzaria */
+        .navbar .navbar-brand {
+            padding: 0;
+            margin-right: 20px;
+        }
+
+        .navbar .navbar-brand img {
+            width: 90px; /* Ajuste a largura da logo */
+            margin-left: 40px;
+            height: auto;
+        }
+
+        /* Título da página */
+        .page-title {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3rem; /* Tamanho maior do título */
+            font-weight: bold;
+            color: #000;
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        /* Seção de escolha de sabores */
+        .flavor-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 150px;
+            padding: 20px;
+        }
+
+        .flavor-card {
+            width: 280px;
+            margin: 35px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 35px;
+            
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Adicionado */
+            padding-top: 120px; /* Espaço para a imagem sobreposta */
+            margin-top: 80px; /* Compensa a altura da imagem */
+        }
+
+        .flavor-card:hover {
+            transform: scale(1.05);
+            
+        }
+
+        .flavor-card img {
+            width: 280px; /* Largura fixa */
+            height: 280px; /* Altura fixa */
+            border-radius: 50%; /* Formato circular */
+            object-fit: cover;
+            position: absolute; /* Posicionamento absoluto */
+            top: -150px; /* Move a imagem para cima do card */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajuste fino de centralização */
+            
+        }
+
+        .flavor-card h5 {
+            font-family: 'Montserrat', 'sans-serif';
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+            margin-top: 30px; /* Ajuste do espaçamento */
+        }
+
+        .flavor-card p {
+            font-family: 'Montserrat', 'sans-serif';
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .flavor-card button {
+            margin-top: 10px;
+            padding: 6px 40px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .flavor-card button:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }

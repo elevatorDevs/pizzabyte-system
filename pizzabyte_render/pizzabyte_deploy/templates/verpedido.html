@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos em Preparo - PizzaByte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/verpedidostyle.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#banner">
+                <img src="{{ url_for('static', filename='img/logoo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('pedidomanual') }}">Fazer pedidos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('verpedido') }}">Ver pedidos</a></li>
+                    <a class="nav-link" href="{{ url_for('relatorios') }}">Relatórios</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título da página -->
+    <div class="container">
+        <h1 class="page-title">Pedidos em Preparação</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Lista de pedidos -->
+    <div class="orders-container">
+        {% for pedido in pedidos %}
+        <div class="order-card" id="order-{{ pedido.id }}">
+            <div class="order-number">Pedido #{{ pedido.numero_pedido }}</div>
+            <div class="order-date">{{ pedido.data }}</div>
+            <div class="order-status">
+                Status: <span class="status-badge">{{ pedido.status }}</span>
+            </div>
+            <div class="order-total">Total: R$ {{ "%.2f"|format(pedido.total) }}</div>
+            
+            <button class="btn btn-update" data-toggle="modal" 
+                    data-target="#updateModal" 
+                    data-order-id="{{ pedido.id }}"
+                    data-order-number="{{ pedido.numero_pedido }}"
+                    data-current-status="{{ pedido.status }}">
+                Atualizar Pedido
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Modal de Atualização -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="POST" action="/atualizar_status/0" id="statusForm">
+                    <input type="hidden" name="pedido_id" id="modalPedidoId">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Atualizar Pedido #<span id="modalOrderNumber"></span></h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="statusSelect">Novo status:</label>
+                            <select class="form-control" id="statusSelect" name="novo_status">
+                                <option value="Em preparo">Em preparo</option>
+                                <option value="Saiu para entrega">Saiu para entrega</option>
+                                <option value="Entregue">Entregue</option>
+                                <option value="Cancelado">Cancelado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione este botão junto aos outros na seção de pedidos -->
+<div class="text-center mt-4">
+    <form action="{{ url_for('limpar_pedidos') }}" method="post" onsubmit="return confirm('Tem certeza que deseja limpar TODOS os pedidos finalizados/cancelados?');">
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Limpar Pedidos Finalizados
+        </button>
+    </form>
+</div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 Pizzaria Delícia. Todos os direitos reservados.</p>
+        <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+    </footer>
+
+    <!-- Incluindo o Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('#updateModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var pedidoId = button.data('order-id');
+            var pedidoNumber = button.data('order-number');
+            var currentStatus = button.data('current-status');
+            
+            var modal = $(this);
+            modal.find('#modalOrderNumber').text(pedidoNumber);
+            modal.find('#modalPedidoId').val(pedidoId);
+            modal.find('#statusSelect').val(currentStatus);
+            
+            // Atualiza a ação do formulário com o ID correto
+            var form = modal.find('#statusForm');
+            form.attr('action', '/atualizar_status/' + pedidoId);
+        });
+
+        // Atualiza a página a cada 30 segundos para mostrar mudanças
+        setTimeout(function(){
+            window.location.reload();
+        }, 30000);
+    </script>
+</body>
+</html>

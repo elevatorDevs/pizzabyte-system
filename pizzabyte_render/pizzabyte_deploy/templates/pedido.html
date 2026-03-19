@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos - PizzaByte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/pedidostyle.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#banner">
+                <img src="{{ url_for('static', filename='img/logoo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cardapio') }}">Cardápio</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('carrinho') }}">Carrinho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('meus_pedidos') }}">Meus Pedidos</a></li>  
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Entrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cadastro') }}">Criar Conta</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título da Página -->
+    <div class="page-title" id="home">
+        <h2><span>Acompanhe</span> seus Pedidos</h2>
+    </div>
+
+    <!-- Lista de Pedidos -->
+    {% for pedido_com_itens in pedidos_com_itens %}
+    <div class="order-container" id="pedidos">
+        <h4>Pedido #{{ pedido_com_itens.pedido.numero_pedido }}</h4>
+        <div class="order-details">
+            <p><strong>Data:</strong> {{ pedido_com_itens.pedido.data_formatada }}</p>
+            <p><strong>Status:</strong> {{ pedido_com_itens.pedido.status }}</p>
+            <p><strong>Total:</strong> R$ {{ "%.2f"|format(pedido_com_itens.pedido.total) }}</p>
+        </div>
+    
+        <div class="order-items">
+            <h5>Itens do Pedido:</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Pizza</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in pedido_com_itens.itens %}
+                    <tr>
+                        <td>
+                            <img src="{{ url_for('static', filename=item.imagem) }}" width="50">
+                            {{ item.nome }}
+                        </td>
+                        <td>{{ item.quantidade }}</td>
+                        <td>R$ {{ "%.2f"|format(item.preco_unitario) }}</td>
+                        <td>R$ {{ "%.2f"|format(item.preco_unitario * item.quantidade) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="order-status-timeline">
+            <div class="status-step {% if pedido_com_itens.pedido.status == 'Em preparo' %}active{% endif %}">
+                <div class="status-dot"></div>
+                <p>Em preparo</p>
+            </div>
+            <div class="status-step {% if pedido_com_itens.pedido.status == 'Saiu para entrega' %}active{% endif %}">
+                <div class="status-dot"></div>
+                <p>Saiu para entrega</p>
+            </div>
+            <div class="status-step {% if pedido_com_itens.pedido.status == 'Entregue' %}active{% endif %}">
+                <div class="status-dot"></div>
+                <p>Entregue</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Texto de Agradecimento -->
+    <div class="thank-you-text">
+        <p>Obrigado pela sua escolha e confiança! </p>
+    </div>
+
+    <!-- Texto adicional sobre o trabalho da pizzaria -->
+    <div class="thank-you-subtext" id="carrinho">
+        <p>Estamos trabalhando para garantir que sua experiência seja incrível. Agradecemos por confiar na nossa pizzaria!</p>
+    </div>
+
+    <!-- Incluindo o Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

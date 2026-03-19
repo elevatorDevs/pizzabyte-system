@@ -1,0 +1,96 @@
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            background-color: #e4e4e4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+       /* Barra de navegação */
+       .navbar {
+            background-color: #fff; /* Fundo branco */
+        }
+
+        .navbar a {
+            color: #000 !important; /* Cor preta nas letras */
+            font-weight: normal; /* Remover o negrito */
+            margin-right: 40px;
+            padding: 30px 20px;
+            font-family: 'Montserrat', 'sans-serif';
+        }
+
+        .navbar a:hover {
+            color: #d32f2f !important; /* Cor vermelha no hover */
+        }
+
+        .navbar .navbar-nav {
+            margin-left: auto; /* Alinha os itens à direita */
+        }
+
+        .navbar .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-item:last-child a {
+            border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+            border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+            margin-top: 28px;
+            padding: 0px 30px;
+        }
+
+        /* Logo da Pizzaria */
+        .navbar .navbar-brand {
+            padding: 0;
+            margin-right: 20px;
+        }
+
+        .navbar .navbar-brand img {
+            width: 90px; /* Ajuste a largura da logo */
+            margin-left: 40px;
+            height: auto;
+        }
+        /* Formulário de Login */
+        .login-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', 'sans-serif';
+            font-size: 2.5rem; /* Aumentei o tamanho do título */
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 25px; /* Aumentei o espaço entre os campos */
+        }
+
+        .btn-login {
+            background-color: #d32f2f;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem; /* Aumentei o tamanho do botão */
+        }
+
+        .btn-login:hover {
+            background-color: #c82333;
+            color: white;
+        }
+
+        .btn-login:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(211, 47, 47, 0.7);
+        }

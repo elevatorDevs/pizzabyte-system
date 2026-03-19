@@ -1,0 +1,167 @@
+
+/* Custom CSS */
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: #e4e4e4; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #fff; /* Fundo branco */
+}
+
+.navbar a {
+    color: #000 !important; /* Cor preta nas letras */
+    font-weight: normal; /* Remover o negrito */
+    margin-right: 40px;
+    padding: 30px 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.navbar a:hover {
+    color: #d32f2f !important; /* Cor vermelha no hover */
+}
+
+.navbar .navbar-nav {
+    margin-left: auto; /* Alinha os itens à direita */
+}
+
+.navbar .nav-item {
+    margin-left: 20px;
+}
+
+.navbar .nav-item:last-child a {
+    border: 2px solid #d32f2f; /* Borda vermelha no botão "Criar Conta" */
+    border-radius: 30px; /* Torna o botão "Criar Conta" redondo */
+    margin-top: 28px;
+    padding: 0px 30px;
+}
+
+/* Logo da Pizzaria */
+.navbar .navbar-brand {
+    padding: 0;
+    margin-right: 20px;
+}
+
+.navbar .navbar-brand img {
+    width: 90px; /* Ajuste a largura da logo */
+    margin-left: 40px;
+    height: auto;
+}
+
+/* Título da Página */
+.page-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+/* Caixa do Pedido */
+.order-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.order-container h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.order-status {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.order-status p {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos das bolinhas de status */
+.status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-left: 10px;
+}
+
+.status-in-progress {
+    background-color: #4caf50; /* Verde */
+}
+
+/* Texto de agradecimento */
+.thank-you-text {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-family: 'Montserrat', 'sans-serif';
+    text-align: center;
+    line-height: 1.6;
+}
+
+.thank-you-subtext {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    text-align: center;
+    font-weight: 300;
+}
+
+.order-status-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    position: relative;
+}
+
+.status-step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.status-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ddd;
+    margin: 0 auto 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.status-step.active .status-dot {
+    background: #d32f2f;
+}
+
+.status-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 60%;
+    right: -40%;
+    height: 2px;
+    background: #ddd;
+    z-index: 0;
+}
+
+.status-step.active:not(:last-child)::after {
+    background: #d32f2f;
+}

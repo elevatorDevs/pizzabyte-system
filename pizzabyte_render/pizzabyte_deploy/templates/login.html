@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PizzaByte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/loginstyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#banner">
+                <img src="{{ url_for('static', filename='img/logoo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cardapio') }}">Cardápio</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('carrinho') }}">Carrinho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('meus_pedidos') }}">Meus Pedidos</a></li>  
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Entrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cadastro') }}">Criar Conta</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-container" id="entrar">
+        <h2>Login</h2>
+
+        <ul class="nav nav-pills nav-fill mb-4" id="loginTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="client-tab" data-toggle="pill" href="#client-login" role="tab" aria-controls="client-login" aria-selected="true">Login Cliente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="admin-tab" data-toggle="pill" href="#admin-login" role="tab" aria-controls="admin-login" aria-selected="false">Login Admin</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="loginTabsContent">
+            <div class="tab-pane fade show active" id="client-login" role="tabpanel" aria-labelledby="client-tab">
+                <form action="{{ url_for('login') }}" method="post">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" id="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <button type="submit" class="btn-login">Entrar</button>
+                </form>
+
+            <div class="tab-pane fade" id="admin-login" role="tabpanel" aria-labelledby="admin-tab">
+                <!-- Mantido o formulário com apenas 1 botão que leva para verpedido -->
+                <form action="{{ url_for('verpedido') }}" method="get">
+                    <button type="submit" class="btn-login">Entrar como Admin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
