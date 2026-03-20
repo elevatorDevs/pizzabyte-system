@@ -226,6 +226,7 @@ Abra o navegador e vá para:
 
 http://localhost:5000
 
+
 ## ✅ Considerações Finais
 
 Este projeto foi desenvolvido com o objetivo de criar um sistema simples, funcional e intuitivo para gerenciamento de pedidos de uma pizzaria. Utilizando Python com Flask, o sistema permite realizar e visualizar pedidos, gerar relatórios e gerenciar o fluxo de preparo até a entrega.
