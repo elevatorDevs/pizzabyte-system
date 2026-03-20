@@ -8,13 +8,13 @@ Aplicação web desenvolvida como projeto acadêmico para as disciplinas de **Ba
 
 | | | |
 |:---:|:---:|:---:|
-| ![Homepage](design/homepage.png) | ![Cardápio](design/cardapio.png) | ![Carrinho](design/carrinho.png) |
+| ![Homepage](pizzabyte_render/pizzabyte_deploy/design/homepage.png) | ![Cardápio](pizzabyte_render/pizzabyte_deploy/design/cardapio.png) | ![Carrinho](pizzabyte_render/pizzabyte_deploy/design/carrinho.png) |
 | Homepage | Cardápio | Carrinho |
-| ![Cadastro](design/cadastro.png) | ![Pedidos](design/pedidos.png) | ![Pedido Manual](design/pedidomanual.png) |
+| ![Cadastro](pizzabyte_render/pizzabyte_deploy/design/cadastro.png) | ![Pedidos](pizzabyte_render/pizzabyte_deploy/design/pedidos.png) | ![Pedido Manual](pizzabyte_render/pizzabyte_deploy/design/pedidomanual.png) |
 | Cadastro | Pedidos | Pedido Manual (Admin) |
-| ![Admin](design/pedidosadmin.png) | ![Relatórios](design/relatorios.png) | |
+| ![Admin](pizzabyte_render/pizzabyte_deploy/design/pedidosadmin.png) | ![Relatórios](pizzabyte_render/pizzabyte_deploy/design/relatorios.png) | |
 | Gestão de Pedidos (Admin) | Relatórios | |
-
+ 
 ---
 
 ## 🛠️ Tecnologias
