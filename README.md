@@ -6,14 +6,16 @@ Aplicação web desenvolvida como projeto acadêmico para as disciplinas de **Ba
 
 ## 🖼️ Interface
 
-| | | |
-|:---:|:---:|:---:|
-| ![Homepage](pizzabyte_render/pizzabyte_deploy/design/homepage.png) | ![Cardápio](pizzabyte_render/pizzabyte_deploy/design/cardapio.png) | ![Carrinho](pizzabyte_render/pizzabyte_deploy/design/carrinho.png) |
-| Homepage | Cardápio | Carrinho |
-| ![Cadastro](pizzabyte_render/pizzabyte_deploy/design/cadastro.png) | ![Pedidos](pizzabyte_render/pizzabyte_deploy/design/pedidos.png) | ![Pedido Manual](pizzabyte_render/pizzabyte_deploy/design/pedidomanual.png) |
-| Cadastro | Pedidos | Pedido Manual (Admin) |
-| ![Admin](pizzabyte_render/pizzabyte_deploy/design/pedidosadmin.png) | ![Relatórios](pizzabyte_render/pizzabyte_deploy/design/relatorios.png) | |
-| Gestão de Pedidos (Admin) | Relatórios | |
+| | |
+|:---:|:---:|
+| ![Homepage](pizzabyte_render/pizzabyte_deploy/design/homepage.png) | ![Cardápio](pizzabyte_render/pizzabyte_deploy/design/cardapio.png) |
+| Homepage | Cardápio |
+| ![Carrinho](pizzabyte_render/pizzabyte_deploy/design/carrinho.png) | ![Cadastro](pizzabyte_render/pizzabyte_deploy/design/cadastro.png) |
+| Carrinho | Cadastro |
+| ![Pedidos](pizzabyte_render/pizzabyte_deploy/design/pedidos.png) | ![Pedido Manual](pizzabyte_render/pizzabyte_deploy/design/pedidomanual.png) |
+| Pedidos | Pedido Manual (Admin) |
+| ![Admin](pizzabyte_render/pizzabyte_deploy/design/pedidosadmin.png) | ![Relatórios](pizzabyte_render/pizzabyte_deploy/design/relatorios.png) |
+| Gestão de Pedidos (Admin) | Relatórios |
  
 ---
 
